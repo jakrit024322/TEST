@@ -1,33 +1,33 @@
-import { Injectable } from '@angular/core';
-import { environment } from 'src/environments/environment';
 import { HttpClient } from '@angular/common/http';
-import {map} from 'rxjs';
+import { Injectable } from '@angular/core';
+import { map } from 'rxjs';
+import { environment } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root'
 })
-export class BookService {
+export class MemberService {
 
-  private url = `${environment.serviceUrl}/book`
+  private url = `${environment.serviceUrl}/member`
   constructor(private http: HttpClient) { }
 
-  getBook(): any{
+  getMember(): any{
     return this.http.get<any>(this.url);
   }
 
-  getBookById(id : any){
+  getMemberById(id : any){
     let getUrl = `${this.url}/${id}`;
     return this.http.get<any>(getUrl);
   } 
 
-  addBook(book: any){
+  addMember(book: any){
     return this.http.post<any>(this.url, book)
       .pipe(map((res)=>{
         return res;
       }))
   }
 
-  updateBook(book: any,id:any){
+  updateMember(book: any,id:any){
     let getUrl = `${this.url}/${id}`;
     return this.http.put<any>(getUrl, book)
       .pipe(map((res)=>{
@@ -35,17 +35,8 @@ export class BookService {
       }))
   }
 
-  deleteBook(id:any){
+  deleteMember(id:any){
     let getUrl = `${this.url}/${id}`;
     return this.http.delete<any>(getUrl);
   }
-
-  // reviewBook(id: any,){
-
-  //   let getUrl = `${this.url}/${id}`;
-  //   return this.http.patch<any>(getUrl, review)
-  //     .pipe(map((res)=>{
-  //       return res;
-  //     }))
-  // }
 }

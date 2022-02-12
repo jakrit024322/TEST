@@ -12,10 +12,10 @@
                     <a class="nav-link" routerLink="/">Home <span class="visually-hidden">(current)</span></a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" routerLink="/member">Member</a>
+                    <a class="nav-link" routerLink="/member/add">Member</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" routerLink="/staff">Staff</a>
+                    <a class="nav-link" routerLink="/staff/add">Staff</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" routerLink="/book">Book</a>
@@ -27,14 +27,14 @@
                 <li class="nav-item">
                     <a class="nav-link" routerLink="/login">Login</a>
                 </li>
-                <!-- <li class="nav-item dropdown" *ngIf="isLoggedIn">
+                <li class="nav-item dropdown" *ngIf="isLoggedIn">
                     <a class="nav-link dropdown-toggle" href="#" id="dropdownId" data-bs-toggle="dropdown"
                         aria-haspopup="true" aria-expanded="false">{{ currentUser.name }}</a>
                     <div class="dropdown-menu" aria-labelledby="dropdownId">
                         <a class="dropdown-item" routerLink="/profile">Profile</a>
                         <a class="dropdown-item" routerLink="/" (click)="logout()">Logout</a>
                     </div>
-                </li> -->
+                </li>
             </ul>
         </div>
     </div>
